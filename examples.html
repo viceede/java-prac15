@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Примеры запросов к HTTP-серверу с калькулятором</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .example { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<h1>Примеры запросов к HTTP-серверу с калькулятором</h1>
+
+<h2>Базовые URL:</h2>
+
+<div class="example">
+    <h3>Главная страница:</h3>
+    <a href="http://localhost:11/" target="_blank">http://localhost:11/</a>
+</div>
+
+<div class="example">
+    <h3>Информация о сервере:</h3>
+    <a href="http://localhost:11/info" target="_blank">http://localhost:11/info</a>
+</div>
+
+<h2>Примеры вычислений:</h2>
+
+<div class="example">
+    <h3>Сложение (5 + 3):</h3>
+    <a href="http://localhost:11/calculate?a=5&b=3&op=+" target="_blank">http://localhost:11/calculate?a=5&b=3&op=+</a>
+    <p>Ожидаемый результат: 8</p>
+</div>
+
+<div class="example">
+    <h3>Вычитание (10 - 4):</h3>
+    <a href="http://localhost:11/calculate?a=10&b=4&op=-" target="_blank">http://localhost:11/calculate?a=10&b=4&op=-</a>
+    <p>Ожидаемый результат: 6</p>
+</div>
+
+<div class="example">
+    <h3>Умножение (7 * 6):</h3>
+    <a href="http://localhost:11/calculate?a=7&b=6&op=*" target="_blank">http://localhost:11/calculate?a=7&b=6&op=*</a>
+    <p>Ожидаемый результат: 42</p>
+</div>
+
+<div class="example">
+    <h3>Деление (15 / 3):</h3>
+    <a href="http://localhost:11/calculate?a=15&b=3&op=/" target="_blank">http://localhost:11/calculate?a=15&b=3&op=/</a>
+    <p>Ожидаемый результат: 5</p>
+</div>
+
+<h2>Примеры с ошибками:</h2>
+
+<div class="example">
+    <h3>Деление на ноль:</h3>
+    <a href="http://localhost:11/calculate?a=10&b=0&op=/" target="_blank">http://localhost:11/calculate?a=10&b=0&op=/</a>
+    <p>Ожидаемый результат: Ошибка 400 (Bad Request)</p>
+</div>
+
+<div class="example">
+    <h3>Некорректная операция:</h3>
+    <a href="http://localhost:11/calculate?a=5&b=3&op=%" target="_blank">http://localhost:11/calculate?a=5&b=3&op=%</a>
+    <p>Ожидаемый результат: Ошибка 400 (Bad Request)</p>
+</div>
+
+<div class="example">
+    <h3>Отсутствие параметров:</h3>
+    <a href="http://localhost:11/calculate" target="_blank">http://localhost:11/calculate</a>
+    <p>Ожидаемый результат: Ошибка 400 (Bad Request)</p>
+</div>
+
+<div class="example">
+    <h3>Несуществующая страница:</h3>
+    <a href="http://localhost:11/unknown" target="_blank">http://localhost:11/unknown</a>
+    <p>Ожидаемый результат: Ошибка 404 (Not Found)</p>
+</div>
+</body>
+</html>
