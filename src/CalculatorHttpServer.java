@@ -5,8 +5,8 @@ import java.util.*;
 public class CalculatorHttpServer {
     private static final String STUDENT_NAME = "Васильев Андрей Алексеевич"; /* ФИО и шифр */
     private static final String STUDENT_CODE = "23И0668";
-    private static final int STUDENT_NUMBER = 1; // Порядковый номер студента
-    private static final int PORT = Integer.parseInt(STUDENT_NUMBER + "" + STUDENT_NUMBER); // 11
+    private static final int STUDENT_NUMBER = 1;
+    private static final int PORT = Integer.parseInt(STUDENT_NUMBER + "" + STUDENT_NUMBER);
 
     public static void main(String[] args) {
         System.out.println("==========================================");
@@ -47,7 +47,6 @@ public class CalculatorHttpServer {
         String method = requestParts[0];
         String pathWithParams = requestParts[1];
 
-        // Разделяем путь и параметры
         String[] pathParts = pathWithParams.split("\\?");
         String path = pathParts[0];
         Map<String, String> params = new HashMap<>();
